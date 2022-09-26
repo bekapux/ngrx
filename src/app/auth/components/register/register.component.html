@@ -24,7 +24,7 @@
                 class="form-control form-control-large"
                 placeholder="Email"
               />
-            </fieldset >
+            </fieldset>
             <fieldset class="form-group">
               <input
                 formControlName="password"
@@ -33,7 +33,14 @@
                 placeholder="password"
               />
             </fieldset>
-            <button class="btn btn-lg btn-primary pull-xs-right" type="submit">Sign Up</button>
+            <button
+              [disabled]="isSubmitting$ | async"
+              class="btn btn-lg btn-primary pull-xs-right"
+              type="submit"
+              (click)="onSubmit()"
+            >
+              Sign Up
+            </button>
           </fieldset>
         </form>
       </div>
